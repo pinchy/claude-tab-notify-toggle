@@ -12,7 +12,7 @@ Toggle terminal bell notifications on or off.
 Run the following command using the Bash tool:
 
 ```bash
-bash "${CLAUDE_CONFIG_DIR:-$HOME/.claude}"/hooks/tab-notify/tab-notify.sh toggle
+bash ~/.claude/hooks/tab-notify/tab-notify.sh toggle
 ```
 
 Report the output to the user. The command will print either:
