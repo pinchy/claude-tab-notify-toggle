@@ -1,6 +1,6 @@
 #!/bin/bash
 # tab-notify installer for Claude Code
-# Usage: curl -fsSL https://raw.githubusercontent.com/pinchy/tab-notify/main/install.sh | bash
+# Usage: curl -fsSL https://raw.githubusercontent.com/pinchy/claude-tab-notify-toggle/main/install.sh | bash
 set -euo pipefail
 
 CLAUDE_DIR="${CLAUDE_CONFIG_DIR:-$HOME/.claude}"
@@ -23,7 +23,7 @@ if [ -n "$SCRIPT_DIR" ] && [ -f "$SCRIPT_DIR/tab-notify.sh" ]; then
   cp "$SCRIPT_DIR/tab-notify.sh" "$HOOK_DIR/tab-notify.sh"
   cp "$SCRIPT_DIR/skill/SKILL.md" "$SKILL_DIR/SKILL.md"
 else
-  BASE_URL="https://raw.githubusercontent.com/pinchy/tab-notify/main"
+  BASE_URL="https://raw.githubusercontent.com/pinchy/claude-tab-notify-toggle/main"
   curl -fsSL "$BASE_URL/tab-notify.sh" -o "$HOOK_DIR/tab-notify.sh"
   curl -fsSL "$BASE_URL/skill/SKILL.md" -o "$SKILL_DIR/SKILL.md"
 fi

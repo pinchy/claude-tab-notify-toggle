@@ -15,13 +15,13 @@ It works by walking the process tree to find the real TTY device, since Claude C
 One-liner:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/pinchy/tab-notify/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/pinchy/claude-tab-notify-toggle/main/install.sh | bash
 ```
 
 Or clone and run locally:
 
 ```bash
-git clone https://github.com/pinchy/tab-notify.git
+git clone https://github.com/pinchy/claude-tab-notify-toggle.git
 cd tab-notify
 bash install.sh
 ```
@@ -63,7 +63,7 @@ The bell character works in most terminals. Make sure "visual bell" or "bell not
 ## Uninstall
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/pinchy/tab-notify/main/uninstall.sh | bash
+curl -fsSL https://raw.githubusercontent.com/pinchy/claude-tab-notify-toggle/main/uninstall.sh | bash
 ```
 
 Or if you cloned the repo:
