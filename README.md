@@ -4,6 +4,8 @@ A tiny [Claude Code](https://docs.anthropic.com/en/docs/claude-code) hook that r
 
 Works on macOS, Linux, and WSL. No dependencies beyond Python 3 (for JSON parsing).
 
+![tab-notify in action — terminal tab flashing with bell icon in Cursor](img/cursor.png)
+
 ## What it does
 
 When Claude Code fires a **Stop**, **Notification**, or **PermissionRequest** event, tab-notify sends a bell character (`\a`) to your terminal. Most terminals will flash or highlight the tab when it's not focused.
@@ -22,7 +24,7 @@ Or clone and run locally:
 
 ```bash
 git clone https://github.com/pinchy/claude-tab-notify-toggle.git
-cd tab-notify
+cd claude-tab-notify-toggle
 bash install.sh
 ```
 
@@ -49,16 +51,55 @@ Or from your shell:
 ~/.claude/hooks/tab-notify/tab-notify.sh resume
 ```
 
-## Terminal support
+## Terminal setup
 
-The bell character works in most terminals. Make sure "visual bell" or "bell notification" is enabled in your terminal settings:
+The bell character works in most terminals, but you may need to enable it in your terminal settings.
 
-- **iTerm2**: Profiles > Terminal > Notifications > "Flash visual bell" or "Show bell icon in tabs"
-- **Terminal.app**: Settings > Profiles > Advanced > "Visual bell" / "Audible bell"
-- **Ghostty**: Works by default
-- **Warp**: Works by default
-- **Kitty**: `enable_audio_bell yes` in kitty.conf
-- **Alacritty**: `bell.duration` in alacritty.toml
+### VS Code / Cursor
+
+Open Settings (JSON) and add:
+
+```json
+{
+  "terminal.integrated.enableBell": true,
+  "terminal.integrated.bellDuration": 5000
+}
+```
+
+`bellDuration` controls how long the tab highlight stays visible (in milliseconds). 5000 (5 seconds) gives you enough time to notice it.
+
+### iTerm2
+
+Profiles > Terminal > Notifications > enable "Flash visual bell" or "Show bell icon in tabs"
+
+### Terminal.app
+
+Settings > Profiles > Advanced > enable "Visual bell" and/or "Audible bell"
+
+### Ghostty
+
+Works by default.
+
+### Warp
+
+Works by default.
+
+### Kitty
+
+Add to `kitty.conf`:
+
+```
+enable_audio_bell yes
+```
+
+### Alacritty
+
+Add to `alacritty.toml`:
+
+```toml
+[bell]
+duration = 5000
+```
 
 ## Uninstall
 
